@@ -1,5 +1,38 @@
 <HomeScreen>:
-    Button:
-        text: "Test, on home screen"
-        on_release:
-            app.change_screen("input_one")
+    name: "home_screen"
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDBanner:
+            id: banner
+            text: ["One line string text example without actions."]
+            # The widget that is under the banner.
+            # It will be shifted down to the height of the banner.
+            over_widget: screen
+            vertical_pad: toolbar.height
+
+        MDToolbar:
+            id: toolbar
+            title: "Example Banners"
+            elevation: 10
+            pos_hint: {'top': 1}    
+
+        BoxLayout:
+            id: screen
+            orientation: "vertical"
+            size_hint_y: None
+            height: Window.height - toolbar.height
+
+            OneLineListItem:
+                text: "Banner without actions"
+                on_release: banner.show()
+
+            Widget:
+
+    MDBoxLayout:
+        MDRaisedButton:
+            text: "Test, on home screen"
+            size_hint: 1, None
+            on_release:
+                app.change_screen("input_one")
