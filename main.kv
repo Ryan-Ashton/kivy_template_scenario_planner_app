@@ -1,0 +1,17 @@
+#:include kv/homescreen.kv
+#:include kv/inputone.kv
+
+BoxLayout:
+    orientation: 'vertical'
+
+
+    ScreenManager:
+        id: screen_manager
+
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen
+
+        InputOne:
+            name: "input_one"
+            id: input_one
